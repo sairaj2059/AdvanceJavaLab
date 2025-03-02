@@ -20,6 +20,13 @@ class GooglePayPayment implements PaymentMethod{
 	}
 }	
 
+class PhonePe implements PaymentMethod {
+	public void payment(double amount){
+		System.out.println("Using phone pe");
+	}
+	
+}
+
 class PaymentSoftware{		
 	
 	public void transaction(PaymentMethod paymentMethod, double amount){
@@ -37,5 +44,7 @@ public class AssignmentThree{
 		paymentSoftware.transaction(creditCardPayment, 3000.00);
 		paymentSoftware.transaction(paypalPayment, 4000.00);
 		paymentSoftware.transaction(googlePayPayment, 5000.00);
+		PaymentMethod phonepePayment = new PhonePe();
+		paymentSoftware.transaction(phonepePayment,2312.00);
 	}
 }
